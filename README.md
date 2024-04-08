@@ -36,9 +36,5 @@ git submodule add https://github.com/miredirex/cmake-vcpkg-example.git VCPKG
 
 
 ## Credits
-This package was created by [WeiTing Chen] at [USI-FMAA] and [ETHZurich DFab].
-
-
-[WeiTing chen]:(https://github.com/WeiTing1991)
-[USI-FMAA]:(https://github.com/USI-FMAA)
-[ETHZurich DFab]:(https://dfab.ch/)
+This package was created by [WeiTing Chen](https://github.com/WeiTing1991) 
+at [USI-FMAA](https://github.com/USI-FMAA) and [ETHZurich DFab](https://dfab.ch/).
