@@ -21,13 +21,16 @@ More information is coming soon.
 
 ## Installation
 
+#### Windows
 ```bash
 git clone https://github.com/USI-FMAA/digital_casting_app.git
-git clone https://github.com/microsoft/vcpkg
-
+git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 # install package
+.\VCPKG\bootstrap-vcpkg.bat
 
-# initialize app
+# initialize and build app
+.\package-install.bat
+
 ```
 
 ## Development
