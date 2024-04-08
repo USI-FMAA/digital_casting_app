@@ -26,7 +26,7 @@ jobs:
       run: git clone https://github.com/microsoft/vcpkg.git ${{github.workspace}}/VCPKG
 
     - name: init vcpakg
-      run: ./${{github.workspace}}/VCPKG/bootstrap-vcpkg.bat
+      run: cd ${{github.workspace}}/VCPKG && ./bootstrap-vcpkg.bat
 
     - name: install package
       run: ./${{github.workspace}}/package-install-win.bat
