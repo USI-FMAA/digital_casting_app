@@ -1,5 +1,5 @@
 {
-  "name": "dcs_app",
+  "name": "digitial-casting-app",
   "version-string": "0.1.0",
   "dependencies": [
       "glfw3",

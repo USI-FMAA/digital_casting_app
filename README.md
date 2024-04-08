@@ -23,7 +23,7 @@ More information is coming soon.
 
 ```bash
 git clone https://github.com/USI-FMAA/digital_casting_app.git
-git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
+git clone https://github.com/microsoft/vcpkg
 
 # install package
 
@@ -32,10 +32,11 @@ git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 
 ## Development
 
+#### Windows
 ```bash
-
 git submodule add https://github.com/microsoft/vcpkg VCPKG
-
+.\VCPKG\bootstrap-vcpkg.bat
+.\package-install.bat
 ```
 
 

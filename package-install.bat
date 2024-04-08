@@ -7,8 +7,6 @@ REM  NOTE: https://vcpkg.io/en/packages
 
 rem Check if dependencies are already installed
 
-pushd "%VCPKG_DIR%"
-bootstrap-vcpkg.bat
 if not exist "%INSTALLED_SHARED_DIR%" (
     echo Dependencies not installed. Installing...
     rem Define the path to the vcpkg executable
