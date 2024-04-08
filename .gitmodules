@@ -1,0 +1,3 @@
+[submodule "VCPKG"]
+	path = VCPKG
+	url = https://github.com/miredirex/cmake-vcpkg-example.git

@@ -18,10 +18,20 @@ More information is coming soon.
 
 ## Installation
 
+```bash
+git clone https://github.com/USI-FMAA/digital_casting_app.git
+git clone --recurse-submodules -j8 https://github.com/miredirex/cmake-vcpkg-example.git
+
+# install package
+# initialize app
+```
+
 ## Development
 
 ```bash
-git add submodules https://github.com/miredirex/cmake-vcpkg-example.git VCPKG
+
+git submodule add https://github.com/miredirex/cmake-vcpkg-example.git VCPKG
+
 ```
 
 
