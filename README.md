@@ -7,11 +7,14 @@
 [![imgui version](https://img.shields.io/badge/imgui-1.90.4-black)](https://github.com/ocornut/imgui)
 [![cmake version](https://img.shields.io/badge/cmake-3.20.1-black)](https://cmake.org/)
 [![cpp version](https://img.shields.io/badge/c++-20-black)]()
+
+
 More information is coming soon.
 
 ## Requirements
-* [Windows 10]()
-* [Docker]()
+#### Platform:
+- [Windows 10](https://www.microsoft.com/en-us/software-download/windows10)
+- [Ubuntu 22.04](https://ubuntu.com/download/desktop)
 
 ## Package Version
 
@@ -20,9 +23,10 @@ More information is coming soon.
 
 ```bash
 git clone https://github.com/USI-FMAA/digital_casting_app.git
-git clone --recurse-submodules -j8 https://github.com/miredirex/cmake-vcpkg-example.git
+git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 
 # install package
+
 # initialize app
 ```
 
@@ -30,11 +34,11 @@ git clone --recurse-submodules -j8 https://github.com/miredirex/cmake-vcpkg-exam
 
 ```bash
 
-git submodule add https://github.com/miredirex/cmake-vcpkg-example.git VCPKG
+git submodule add https://github.com/microsoft/vcpkg VCPKG
 
 ```
 
 
 ## Credits
-This package was created by [WeiTing Chen](https://github.com/WeiTing1991) 
+This package was created by [WeiTing Chen](https://github.com/WeiTing1991)
 at [USI-FMAA](https://github.com/USI-FMAA) and [ETHZurich DFab](https://dfab.ch/).
