@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.29.1)
+cmake_minimum_required(VERSION 3.29.0)
 
 project(dcs_app VERSION 1.0 LANGUAGES CXX)
 
