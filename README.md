@@ -6,7 +6,7 @@
 [![glad version](https://img.shields.io/badge/glad-0.1.36-white)](https://github.com/Dav1dde/glad?tab=readme-ov-file)
 [![imgui version](https://img.shields.io/badge/imgui-1.90.4-black)](https://github.com/ocornut/imgui)
 [![cmake version](https://img.shields.io/badge/cmake-3.20.1-black)](https://cmake.org/)
-
+[![cpp version](https://img.shields.io/badge/c++-20-black)]()
 More information is coming soon.
 
 ## Requirements
