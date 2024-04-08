@@ -1,4 +1,4 @@
-# **Digital Casting System**
+# **Digital Casting System APP**
 
 ![GitHub - License](https://img.shields.io/badge/License-MIT-black.svg)
 [![vcpkg version](https://img.shields.io/badge/vcpkg-lastest-white)]()
