@@ -10,6 +10,8 @@ set(CMAKE_CXX_STANDARD 17)
 if (WIN32)
     message("Configuring for windows")
     set(VCPKG_TARGET_TRIPLET "x64-windows" CACHE STRING "")
+    include_directories(C:/Users/weitingchen/anaconda3/include)
+    link_directories(C:/Users/weitingchen/anaconda3/libs)
 endif()
 if (UNIX AND NOT APPLE)
     message("Configuring for linux")
@@ -46,6 +48,7 @@ set(REQUIRE_PACKAGE
     glad
     imgui
     implot
+    pybind11
 )
 
 add_executable(${PROJECT_NAME} src/main.cpp)
@@ -67,5 +70,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     imgui::imgui
     implot::implot
     OpenGL::GL
+    pybind11::embed
 )
 

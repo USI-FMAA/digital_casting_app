@@ -6,6 +6,7 @@
       "glad" ,
       "opengl-registry",
       "implot",
+      "pybind11",
     {
       "name": "imgui",
       "features": ["glfw-binding", "opengl3-binding"]
