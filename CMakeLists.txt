@@ -52,6 +52,7 @@ set(REQUIRE_PACKAGE
 )
 
 add_executable(${PROJECT_NAME} src/main.cpp)
+
 # foreach(PACKAGE ${REQUIRE_PACKAGE})
 #     set(${PACKAGE}_DIR ${INSTALLED_SHARED_DIR}/${PACKAGE})
 # endforeach()

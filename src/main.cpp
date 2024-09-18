@@ -1,8 +1,8 @@
-#include <pybind11/embed.h>
+#include "app.cpp"
 
-namespace py = pybind11;
-
-int main() {
-  py::scoped_interpreter guard{};
-  py::print("Hello, World!");
+int main()
+{
+    App app;
+    app.sendMessage();
+    return 0;
 }
