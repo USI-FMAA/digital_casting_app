@@ -16,13 +16,11 @@ endif()
 if (UNIX AND NOT APPLE)
     message("Configuring for linux")
     set(VCPKG_TARGET_TRIPLET "x64-linux" CACHE STRING "")
-    include_directories(${CMAKE_SOURCE_DIR}/include)
 endif()
 if (APPLE)
     message("Configuring for apple")
     set(VCPKG_TARGET_TRIPLET "x64-osx" CACHE STRING "" )
     set(CMAKE_OSX_ARCHITECTURES "arm64")
-    include_directories(${CMAKE_SOURCE_DIR}/include)
 endif()
 
 # Define the path to the installed directory
@@ -45,6 +43,8 @@ endif()
 #         message(FATAL_ERROR "Failed to install dependencies with Vcpkg.")
 #     endif()
 # endif()
+
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 set(REQUIRE_PACKAGE
     glfw3

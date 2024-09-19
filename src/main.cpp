@@ -2,7 +2,7 @@
 // This app uses implot and imgui, but does not output to any backend! It only
 // serves as a proof that an app can be built, linked, and run.
 
-#include "app.h"
+// #include "app.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
