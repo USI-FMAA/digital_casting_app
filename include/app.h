@@ -1,6 +1,4 @@
 #pragma once
-#ifdef APP_H
-#define APP_H
 
 #include <string>
 
@@ -10,6 +8,6 @@ private:
 
 public:
   void sendMessage();
-}
+  void setMessage();
+};
 
-#endif // APP_H

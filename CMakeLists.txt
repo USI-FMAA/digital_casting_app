@@ -16,10 +16,13 @@ endif()
 if (UNIX AND NOT APPLE)
     message("Configuring for linux")
     set(VCPKG_TARGET_TRIPLET "x64-linux" CACHE STRING "")
+    include_directories(${CMAKE_SOURCE_DIR}/include)
 endif()
 if (APPLE)
     message("Configuring for apple")
     set(VCPKG_TARGET_TRIPLET "x64-osx" CACHE STRING "" )
+    set(CMAKE_OSX_ARCHITECTURES "arm64")
+    include_directories(${CMAKE_SOURCE_DIR}/include)
 endif()
 
 # Define the path to the installed directory
@@ -51,7 +54,7 @@ set(REQUIRE_PACKAGE
     pybind11
 )
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/app/app.cpp)
 
 # foreach(PACKAGE ${REQUIRE_PACKAGE})
 #     set(${PACKAGE}_DIR ${INSTALLED_SHARED_DIR}/${PACKAGE})

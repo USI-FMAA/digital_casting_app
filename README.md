@@ -27,12 +27,32 @@ More information is coming soon.
 git clone https://github.com/USI-FMAA/digital_casting_app.git
 git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 
-# install package
+# install package manager
 .\VCPKG\bootstrap-vcpkg.bat
 
 # initialize and build app
 .\package-install.bat
 ```
+
+#### MacOS/Ubuntu
+
+```bash
+git clone https://github.com/USI-FMAA/digital_casting_app.git
+git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
+
+# install package manager
+./VCPKG/bootstrap-vcpkg.sh
+
+# install package
+./package-install.sh
+
+# initialize and build app
+./init-setup-osx.sh
+
+# test app
+
+```
+
 
 ## Development
 
@@ -41,15 +61,22 @@ git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 ```bash
 # update the package manger
 git submodule add https://github.com/microsoft/vcpkg VCPKG
+
 # install package
 .\VCPKG\bootstrap-vcpkg.bat
+
 # initialize and build app
 .\package-install.bat
+
 # test app
 .\build\debug\dcs_app.exe
 ```
 
+#### MacOS/Ubuntu
+
+```bash
+```
+
 ## Credits
 
-This package was created by [WeiTing Chen](https://github.com/WeiTing1991)
-at [USI-FMAA](https://github.com/USI-FMAA) and [ETHZurich DFab](https://dfab.ch/).
+This package was created by [WeiTing Chen](https://github.com/WeiTing1991) at [USI-FMAA](https://github.com/USI-FMAA) and [ETHZurich DFab](https://dfab.ch/).
