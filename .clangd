@@ -1,4 +1,4 @@
 CompileFlags:
   Add:
     # - -I/Users/weitingchen/Project/work/digital_casting_app_dev/include
-    # - -IC:\Users\weitingchen\work\99_Github\02_USI\digital_casting_app_dev/include
+    - -IC:\Users\weitingchen\work\99_Github\02_USI\digital_casting_app_dev/include

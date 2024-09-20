@@ -54,7 +54,10 @@ set(REQUIRE_PACKAGE
     pybind11
 )
 
-add_executable(${PROJECT_NAME} src/main.cpp src/app/app.cpp)
+file(GLOB SOURCES "src/*.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# add_executable(${PROJECT_NAME} src/main.cpp src/app/app.cpp)
 
 # foreach(PACKAGE ${REQUIRE_PACKAGE})
 #     set(${PACKAGE}_DIR ${INSTALLED_SHARED_DIR}/${PACKAGE})

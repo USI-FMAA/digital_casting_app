@@ -17,7 +17,6 @@ More information is coming soon.
 - [Windows 10](https://www.microsoft.com/en-us/software-download/windows10)
 - [Ubuntu 22.04](https://ubuntu.com/download/desktop)
 
-## Package Version
 
 ## Installation
 
@@ -53,7 +52,6 @@ git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 
 ```
 
-
 ## Development
 
 #### Windows
@@ -75,7 +73,27 @@ git submodule add https://github.com/microsoft/vcpkg VCPKG
 #### MacOS/Ubuntu
 
 ```bash
+git clone https://github.com/USI-FMAA/digital_casting_app.git
+git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
+
+# install package manager
+./VCPKG/bootstrap-vcpkg.sh
+
+# install package
+./package-install.sh
+
+# initialize and build app
+./init-setup-osx.sh
+
+# test app
+./build/debug/dcs_app
+
 ```
+## Package Version
+
+package architecture:
+
+
 
 ## Credits
 
