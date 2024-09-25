@@ -4,7 +4,7 @@ project(dcs_app VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_TOOLCHAIN_FILE ./VCPKG/vcpkg/scripts/buildsystems/vcpkg.cmake)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # check the operating system, and set the vcpkg target triplet accordingly
 if (WIN32)
@@ -54,7 +54,8 @@ set(REQUIRE_PACKAGE
     pybind11
 )
 
-file(GLOB SOURCES "src/*.cpp")
+# file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/main.cpp", "src/gui/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # add_executable(${PROJECT_NAME} src/main.cpp src/app/app.cpp)

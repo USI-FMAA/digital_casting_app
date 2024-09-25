@@ -1,7 +1,7 @@
 # **Digital Casting System APP**
 
 ![GitHub - License](https://img.shields.io/badge/License-MIT-black.svg)
-[![vcpkg version](https://img.shields.io/badge/vcpkg-lastest-white)]()
+[![vcpkg version](https://img.shields.io/badge/vcpkg-lastest-white)]
 [![glfw version](https://img.shields.io/badge/glfw-3.3.9-black)](https://github.com/glfw/glfw)
 [![glad version](https://img.shields.io/badge/glad-0.1.36-white)](https://github.com/Dav1dde/glad?tab=readme-ov-file)
 [![imgui version](https://img.shields.io/badge/imgui-1.90.4-black)](https://github.com/ocornut/imgui)
@@ -68,6 +68,7 @@ git submodule add https://github.com/microsoft/vcpkg VCPKG
 
 # test app
 .\build\debug\dcs_app.exe
+
 ```
 
 #### MacOS/Ubuntu
@@ -97,4 +98,4 @@ package architecture:
 
 ## Credits
 
-This package was created by [WeiTing Chen](https://github.com/WeiTing1991) at [USI-FMAA](https://github.com/USI-FMAA) and [ETHZurich DFab](https://dfab.ch/).
+This package was created by [WeiTing Chen](https://github.com/WeiTing1991) at [USI-FMAA](https://github.com/USI-FMAA), [PCBM ETHZ](https://ifb.ethz.ch/pcbm), and [ETHZurich DFab](https://dfab.ch/).

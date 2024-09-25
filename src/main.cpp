@@ -1,14 +1,11 @@
-#include "MainWindow.h"
-#include <cstdio> // Add this line for fprintf and stderr
-
+#include "main_window.h"
+#include <iostream>
 
 int main(int argc, char **argv) {
-  try {
-    MainWindow mainWindow(1920, 1080, "Digital Casting System v0.1.0");
-    mainWindow.RunMainLoop();
-  } catch (const std::exception &e) {
-    fprintf(stderr, "Exception: %s\n", e.what());
-    return 1;
-  }
+  std::cout << "Wellcome to digital casting app" << "\n";
+
+  MainWindow mainWindow(1920, 1080, "DIGITAL CASTING SYSTEM v0.1.0");
+  mainWindow.runMainLoop();
+
   return 0;
 }
