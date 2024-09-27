@@ -3,8 +3,10 @@
 
 int main(int argc, char **argv) {
   std::cout << "Wellcome to digital casting app" << "\n";
+  int widthRes = 1920;
+  int heightRes = 1080;
 
-  MainWindow mainWindow(1920, 1080, "DIGITAL CASTING SYSTEM v0.1.0");
+  MainWindow mainWindow(widthRes, heightRes, "DIGITAL CASTING SYSTEM v0.1.0");
   mainWindow.runMainLoop();
 
   return 0;

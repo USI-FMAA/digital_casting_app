@@ -2,8 +2,6 @@
 #include "main_window.h"
 #include <stdexcept>
 #include <stdio.h>
-#include <iostream>
-#include <filesystem>
 
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "Glfw Error %d: %s\n", error, description);
@@ -39,25 +37,7 @@ MainWindow::MainWindow(int width, int height, const char *title) {
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
   // ImPlot::CreateContext();
-  
-  // 
-  ImGuiIO &io = ImGui::GetIO();
-  //font
-  io.FontGlobalScale = 1.8f;
-  std::filesystem::path rootDir = std::filesystem::current_path();
-  std::filesystem::path fontDir = rootDir / "assets";
-  std::cout << fontDir << std::endl;
-
-  // TODO : how fontDir to string
-  // ImFont *appFont = io.Fonts -> AddFontFromFileTTF(fontDir, 16.0f); 
-
-
-  ImFont *appFont = io.Fonts -> AddFontFromFileTTF("C:/Users/weitingchen/work/99_Github/02_USI/digital_casting_app_dev/assets/font/Roboto-Regular.ttf ", 16.0f); 
-  if (appFont ==nullptr) {
-    throw std::runtime_error("Failed to load font");
-  } else {
-    io.FontDefault = appFont;
-  }
+  // ImGui::StyleColorsDark();
 
   // Setup Dear ImGui style
   ImGui::StyleColorsDark();
@@ -77,72 +57,41 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::runMainLoop() {
-  ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
   while (!glfwWindowShouldClose(window)) {
     glfwPollEvents();
 
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
-    // show the menu bar
-    MenuBar();
 
     ImGui::Render();
     int display_w, display_h;
     glfwGetFramebufferSize(window, &display_w, &display_h);
     glViewport(0, 0, display_w, display_h);
-    glClearColor(clear_color.x * clear_color.w,
-                 clear_color.y * clear_color.w,
-                 clear_color.z * clear_color.w,
-                 clear_color.w);
-
+    // glClearColor(clear_color.x * clear_color.w,
+    //              clear_color.y * clear_color.w,
+    //              clear_color.z * clear_color.w,
+    //              clear_color.w);
+    //
     glClear(GL_COLOR_BUFFER_BIT);
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     glfwSwapBuffers(window);
   }
 }
-
-//MenuBar
-void MainWindow::MenuBar() {
-  if (ImGui::BeginMainMenuBar()) {
-    //File menu
+void MainWindow::MenuBar(){
+  if(ImGui::BeginMainMenuBar()) {
     if (ImGui::BeginMenu("File")) {
       if (ImGui::MenuItem("New")) {
-        printf("New\n");
+        // Do stuff
       }
       if (ImGui::MenuItem("Open", "Ctrl+O")) {
-        printf("open\n");
+        // Do stuff
       }
       if (ImGui::MenuItem("Save", "Ctrl+S")) {
-        printf("save\n");
+        // Do stuff
       }
       if (ImGui::MenuItem("Close", "Ctrl+W")) {
-        printf("close\n");
-      }
-
-      ImGui::EndMenu();
-    }
-
-    //setting menu
-    if (ImGui::BeginMenu("Setting")) {
-      if (ImGui::MenuItem("New")) {
-        printf("New\n");
-      }
-      ImGui::EndMenu();
-    }
-
-    //simulation menu
-    if (ImGui::BeginMenu("Simulation")) {
-      if (ImGui::MenuItem("New")) {
-        printf("New\n");
-      }
-      ImGui::EndMenu();
-    }
-
-    //about menu
-    if (ImGui::BeginMenu("About")) {
-      if (ImGui::MenuItem("New")) {
-        printf("New\n");
+        // Do stuff
       }
       ImGui::EndMenu();
     }

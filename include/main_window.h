@@ -13,6 +13,7 @@ public:
   MainWindow(int width, int height, const char *title);
   ~MainWindow();
   void runMainLoop();
+  void MenuBar();
 
   // void Render();
 private:
