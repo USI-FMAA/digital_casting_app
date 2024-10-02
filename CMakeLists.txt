@@ -4,12 +4,14 @@ project(dcs_app VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_TOOLCHAIN_FILE ./VCPKG/vcpkg/scripts/buildsystems/vcpkg.cmake)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # check the operating system, and set the vcpkg target triplet accordingly
 if (WIN32)
     message("Configuring for windows")
     set(VCPKG_TARGET_TRIPLET "x64-windows" CACHE STRING "")
+    include_directories(C:/Users/weitingchen/anaconda3/include)
+    link_directories(C:/Users/weitingchen/anaconda3/libs)
 endif()
 if (UNIX AND NOT APPLE)
     message("Configuring for linux")
@@ -18,6 +20,7 @@ endif()
 if (APPLE)
     message("Configuring for apple")
     set(VCPKG_TARGET_TRIPLET "x64-osx" CACHE STRING "" )
+    set(CMAKE_OSX_ARCHITECTURES "arm64")
 endif()
 
 # Define the path to the installed directory
@@ -41,14 +44,22 @@ endif()
 #     endif()
 # endif()
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 set(REQUIRE_PACKAGE
     glfw3
     glad
     imgui
     implot
+    pybind11
 )
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+# file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/main.cpp", "src/gui/*.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# add_executable(${PROJECT_NAME} src/main.cpp src/app/app.cpp)
+
 # foreach(PACKAGE ${REQUIRE_PACKAGE})
 #     set(${PACKAGE}_DIR ${INSTALLED_SHARED_DIR}/${PACKAGE})
 # endforeach()
@@ -67,5 +78,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     imgui::imgui
     implot::implot
     OpenGL::GL
+    pybind11::embed
 )
 

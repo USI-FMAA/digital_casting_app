@@ -22,4 +22,5 @@ if not exist "%INSTALLED_SHARED_DIR%" (
         exit /b 1
     )
 )
+
 exit /b 0
