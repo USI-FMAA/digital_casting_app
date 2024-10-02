@@ -11,8 +11,9 @@ REM echo "Build directory created"
 REM echo "Delete old bin and build files"
 
 REM Visual Studio 2019, MSYS Makefiles, MinGW Makefiles, ninja
+cmake --build build --target clean
 cmake  -B build -S . -DCMAKE_TOOLCHAIN_FILE=./VCPKG/scripts/buildsystems/vcpkg.cmake
 
 cd build
 REM
-cmake --build . -j16
+cmake --build . -j16 --config Debug

@@ -22,4 +22,5 @@ if not exist "%INSTALLED_SHARED_DIR%" (
         exit /b 1
     )
 )
+COPY %VCPKG_DIR%\buildtrees\pkgconf\x64-windows-dbg\compile_commands.json ..\
 exit /b 0

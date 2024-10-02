@@ -8,8 +8,6 @@
 [![cmake version](https://img.shields.io/badge/cmake-3.20.1-black)](https://cmake.org/)
 [![cpp version](https://img.shields.io/badge/c++-20-black)]()
 
-More information is coming soon.
-
 ## Requirements
 
 #### Platform:
@@ -93,7 +91,6 @@ git clone --recurse-submodules -j8 https://github.com/microsoft/vcpkg
 ## Package Version
 
 package architecture:
-
 
 
 ## Credits

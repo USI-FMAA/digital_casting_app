@@ -42,17 +42,17 @@ MainWindow::MainWindow(int width, int height, const char *title) {
   
   // 
   ImGuiIO &io = ImGui::GetIO();
+
   //font
   io.FontGlobalScale = 1.8f;
   std::filesystem::path rootDir = std::filesystem::current_path();
-  std::filesystem::path fontDir = rootDir / "assets";
-  std::cout << fontDir << std::endl;
+  std::filesystem::path fontDir = rootDir / "assets" / "font" / "Roboto-Regular.ttf";
 
-  // TODO : how fontDir to string
-  // ImFont *appFont = io.Fonts -> AddFontFromFileTTF(fontDir, 16.0f); 
+  ImFont *appFont = io.Fonts -> AddFontFromFileTTF(fontDir.string().c_str(), 16.0f); 
 
+  // ImFont *appFont = io.Fonts -> AddFontFromFileTTF("C:/Users/weitingchen/work/99_Github/
+  // 02_USI/digital_casting_app_dev/assets/font/Roboto-Regular.ttf ", 16.0f); 
 
-  ImFont *appFont = io.Fonts -> AddFontFromFileTTF("C:/Users/weitingchen/work/99_Github/02_USI/digital_casting_app_dev/assets/font/Roboto-Regular.ttf ", 16.0f); 
   if (appFont ==nullptr) {
     throw std::runtime_error("Failed to load font");
   } else {
