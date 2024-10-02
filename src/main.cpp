@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
   int heightRes = 1080;
 
   MainWindow mainWindow(widthRes, heightRes, "DIGITAL CASTING SYSTEM v0.1.0");
-  mainWindow.runMainLoop();
+  mainWindow.RunMainLoop();
 
   return 0;
 }
