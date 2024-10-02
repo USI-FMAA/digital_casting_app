@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <stdio.h>
 #include <string>
+#include <unordered_map>
 
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "Glfw Error %d: %s\n", error, description);
@@ -98,8 +99,8 @@ void MainWindow::RunMainLoop() {
     size_t arrSize = sizeof(buttonArray) / sizeof(buttonArray[0]);
     std::vector<std::string> buttonNames(buttonArray, buttonArray + arrSize);
 
-    bool showNewWindowControl = false; 
-    bool showNewWindowDataVis = false; 
+    static bool showNewWindowControl = false;
+    static bool showNewWindowDataVis = false;
 
     ToolBar("Control", buttonNames, showNewWindowControl);
     ToolBar("Data Visualization", buttonNames, showNewWindowDataVis);
@@ -168,30 +169,31 @@ void MainWindow::ToolBar(const std::string &barName,
                          const std::vector<std::string> &buttonNames,
                          bool &showWindow) {
 
+  static std::unordered_map<std::string, bool> windowStates;
+
   // Create the main window
   ImGui::Begin(barName.c_str());
-
 
   // Create Button
   for (auto &buttonName : buttonNames) {
     if (ImGui::Button(buttonName.c_str())) {
       // Set the flag to true when the button is clicked }
-      showWindow = true;
+      windowStates[buttonName] = true;
     }
   }
 
   ImGui::End();
 
   // Create the new window if the flag is true
-  if (showWindow) {
-    ImGui::Begin("Details", &showWindow); // Pass the address to toggle
-    // Add content to the new window
-    ImGui::Text("Please add more function.");
+  for (auto &buttonName : buttonNames) {
+    if (windowStates[buttonName]) {
+      ImGui::Begin(buttonName.c_str(), &windowStates[buttonName]);
+      ImGui::Text("Please add more function.");
 
-    // Close button (optional)
-    if (ImGui::Button("Close")) {
-      showWindow = false; // Set the flag to false to close the window
+      if (ImGui::Button("Close")) {
+        windowStates[buttonName] = false;
+      }
+      ImGui::End();
     }
-    ImGui::End();
   }
 }
