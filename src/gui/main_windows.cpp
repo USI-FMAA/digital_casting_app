@@ -4,8 +4,6 @@
 #include <iostream>
 #include <stdexcept>
 #include <stdio.h>
-#include <string>
-#include <unordered_map>
 
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "Glfw Error %d: %s\n", error, description);
@@ -43,7 +41,6 @@ MainWindow::MainWindow(int width, int height, const std::string &title) {
   ImGui::CreateContext();
   // ImPlot::CreateContext();
 
-  //
   ImGuiIO &io = ImGui::GetIO();
 
   // font
@@ -68,6 +65,10 @@ MainWindow::MainWindow(int width, int height, const std::string &title) {
   // Setup Dear ImGui style
   ImGui::StyleColorsDark();
   // ImGui::StyleColorsLight();
+  ImGuiStyle *style = &ImGui::GetStyle();
+  // style->Colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f);
+  // style->Colors[ImGuiCol_Button] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f);  // Change button color
+
 
   // Setup Platform/Renderer backends
   ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -94,16 +95,26 @@ void MainWindow::RunMainLoop() {
     MenuBar();
 
     // show thr toolbar
-    std::string buttonArray[] = {"Main", "Inline Mixer", "Concrete Pump",
-                                 "Dosing PumpH", "Dosing PumpL"};
-    size_t arrSize = sizeof(buttonArray) / sizeof(buttonArray[0]);
-    std::vector<std::string> buttonNames(buttonArray, buttonArray + arrSize);
+    // std::string buttonArray[] = {"Main", "Inline Mixer", "Concrete Pump",
+    //                              "Dosing PumpH", "Dosing PumpL"};
+    // size_t arrSize = sizeof(buttonArray) / sizeof(buttonArray[0]);
+    // std::vector<std::string> buttonNames(buttonArray, buttonArray + arrSize);
 
-    static bool showNewWindowControl = false;
-    static bool showNewWindowDataVis = false;
+    // TODO : move this to the head file.
+    static std::map<std::string, bool> windowStates = {
 
-    ToolBar("Control", buttonNames, showNewWindowControl);
-    ToolBar("Data Visualization", buttonNames, showNewWindowDataVis);
+        {"Main", false},
+        {"Inline Mixer", false},
+        {"Concrete Pump", false},
+        {"Dosing PumpH", false},
+        {"Dosing PumpL", false}
+
+    };
+
+    static std::map<std::string, bool> dataWindowStates = windowStates;
+
+    ToolBar("Control", windowStates);
+    ToolBar("Data Visual", dataWindowStates);
 
     // Render windows
     ImGui::Render();
@@ -164,34 +175,31 @@ void MainWindow::MenuBar() {
   ImGui::EndMainMenuBar();
 }
 
-// ToolBar main
+// ToolBar
 void MainWindow::ToolBar(const std::string &barName,
-                         const std::vector<std::string> &buttonNames,
-                         bool &showWindow) {
-
-  static std::unordered_map<std::string, bool> windowStates;
+                         std::map<std::string, bool> &windowStates) {
 
   // Create the main window
   ImGui::Begin(barName.c_str());
-
   // Create Button
-  for (auto &buttonName : buttonNames) {
-    if (ImGui::Button(buttonName.c_str())) {
+  for (auto &buttonName : windowStates) {
+    if (ImGui::Button(buttonName.first.c_str())) {
       // Set the flag to true when the button is clicked }
-      windowStates[buttonName] = true;
+      buttonName.second = true;
     }
   }
-
   ImGui::End();
 
   // Create the new window if the flag is true
-  for (auto &buttonName : buttonNames) {
-    if (windowStates[buttonName]) {
-      ImGui::Begin(buttonName.c_str(), &windowStates[buttonName]);
-      ImGui::Text("Please add more function.");
+  for (auto &buttonName : windowStates) {
+    if (buttonName.second) {
+      std::string windowName = barName + " " + buttonName.first;
+      ImGui::Begin(windowName.c_str(), &buttonName.second);
+      // TODO: add function here
+      ImGui::Text("Here is the ");
 
       if (ImGui::Button("Close")) {
-        windowStates[buttonName] = false;
+        buttonName.second = false;
       }
       ImGui::End();
     }
