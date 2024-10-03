@@ -5,6 +5,7 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -15,9 +16,7 @@ public:
   ~MainWindow();
   void RunMainLoop();
   void MenuBar();
-  void ToolBar(const std::string &barName,
-               const std::vector<std::string> &buttonNames,
-               bool &showWindow);
+  void ToolBar(const std::string &barName, std::map<std::string, bool> &windowStates);
 
 
   // void Render();
