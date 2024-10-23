@@ -16,8 +16,8 @@ public:
   ~MainWindow();
   void RunMainLoop();
   void MenuBar();
-  void ToolBar(const std::string &barName, std::map<std::string, bool> &windowStates);
-
+  void ToolBar(const std::string &barName,
+               std::map<std::string, bool> &windowStates);
 
   // void Render();
 private:
