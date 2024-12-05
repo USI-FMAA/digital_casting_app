@@ -80,4 +80,3 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     OpenGL::GL
     pybind11::embed
 )
-
