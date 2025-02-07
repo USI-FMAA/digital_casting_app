@@ -1,4 +1,7 @@
-# **Digital Casting System APP**
+> [!Warning]
+> This package is deprecated because of unmaintained.
+> Please find the latest version [HERE](https://github.com/USI-FMAA/digital_casting_system_app)
+# **[Deprecated] Digital Casting System APP**
 
 ![GitHub - License](https://img.shields.io/badge/License-MIT-black.svg)
 [![vcpkg version](https://img.shields.io/badge/vcpkg-lastest-white)]()
